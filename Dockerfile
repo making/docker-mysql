@@ -35,7 +35,7 @@ RUN { \
 ADD my.cnf /etc/mysql/my.cnf
 
 VOLUME ["/var/lib/mysql"]
-#VOLUME ["/run/mysqld"]
+VOLUME ["/var/run/mysqld"]
 
 COPY docker-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
