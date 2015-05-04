@@ -1,6 +1,15 @@
 FROM debian:wheezy
 MAINTAINER Toshiaki Maki <makingx at gmail.com>
 
+# Use Japanese
+RUN apt-get update \
+    && apt-get install -y locales \
+    && sed -i -e 's@^# \(ja_JP.UTF-8 UTF-8\)@\1@' /etc/locale.gen \
+    && locale-gen \
+    && update-locale LANG=ja_JP.UTF-8 LANGUAGE="ja_JP:ja" \
+    && mv /etc/localtime /etc/localtime.org \
+    && ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
@@ -9,7 +18,7 @@ RUN groupadd -r mysql && useradd -r -g mysql mysql
 # File::Copy
 # Sys::Hostname
 # Data::Dumper
-RUN apt-get update && apt-get install -y perl --no-install-recommends && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y perl --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 # gpg: key 5072E1F5: public key "MySQL Release Engineering <mysql-build@oss.oracle.com>" imported
 RUN apt-key adv --keyserver pool.sks-keyservers.net --recv-keys A4A9406876FCBD3C456770C88C718D3B5072E1F5
