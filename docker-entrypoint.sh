@@ -40,6 +40,21 @@ if [ "$1" = 'mysqld' ]; then
 		if [ "$MYSQL_DATABASE" ]; then
 			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE\` ;" >> "$tempSqlFile"
 		fi
+		if [ "$MYSQL_DATABASE1" ]; then
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE1\` ;" >> "$tempSqlFile"
+		fi
+		if [ "$MYSQL_DATABASE2" ]; then
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE2\` ;" >> "$tempSqlFile"
+		fi
+		if [ "$MYSQL_DATABASE3" ]; then
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE3\` ;" >> "$tempSqlFile"
+		fi
+		if [ "$MYSQL_DATABASE4" ]; then
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE4\` ;" >> "$tempSqlFile"
+		fi
+		if [ "$MYSQL_DATABASE5" ]; then
+			echo "CREATE DATABASE IF NOT EXISTS \`$MYSQL_DATABASE5\` ;" >> "$tempSqlFile"
+		fi
 		
 		if [ "$MYSQL_USER" -a "$MYSQL_PASSWORD" ]; then
 			echo "CREATE USER '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD' ;" >> "$tempSqlFile"
