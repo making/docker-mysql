@@ -62,6 +62,21 @@ if [ "$1" = 'mysqld' ]; then
 			if [ "$MYSQL_DATABASE" ]; then
 				echo "GRANT ALL ON \`$MYSQL_DATABASE\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
 			fi
+			if [ "$MYSQL_DATABASE1" ]; then
+				echo "GRANT ALL ON \`$MYSQL_DATABASE1\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
+			fi
+			if [ "$MYSQL_DATABASE2" ]; then
+				echo "GRANT ALL ON \`$MYSQL_DATABASE2\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
+			fi
+			if [ "$MYSQL_DATABASE3" ]; then
+				echo "GRANT ALL ON \`$MYSQL_DATABASE3\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
+			fi
+			if [ "$MYSQL_DATABASE4" ]; then
+				echo "GRANT ALL ON \`$MYSQL_DATABASE4\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
+			fi
+			if [ "$MYSQL_DATABASE5" ]; then
+				echo "GRANT ALL ON \`$MYSQL_DATABASE6\`.* TO '$MYSQL_USER'@'%' ;" >> "$tempSqlFile"
+			fi
 		fi
 		
 		echo 'FLUSH PRIVILEGES ;' >> "$tempSqlFile"
