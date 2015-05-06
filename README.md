@@ -1,7 +1,6 @@
 ### MySQL image for Docker
 
-This Dockerifle modifies [docker-library/mysql:5.6](https://github.com/docker-library/mysql/tree/master/5.6) a little.
-
+This Dockerifle modifies [docker-library/mysql:5.6@1f430aeee538aec3b51554ca9fc66955231b3563](https://github.com/docker-library/mysql/tree/1f430aeee538aec3b51554ca9fc66955231b3563/5.6) a little.
 #### Quick Start
 
 Run the mysql image
